@@ -12,14 +12,13 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    static boolean isEnabled = false;
-    Button startButton;
-    Button stopButton;
-    EditText latitudeEditText;
-    EditText longitudeEditText;
-    float mLatitude;
-    float mLongitude;
     public static final String TAG = "FakeLocation";
+    private Button startButton;
+    private Button stopButton;
+    private EditText latitudeEditText;
+    private EditText longitudeEditText;
+    private float mLatitude;
+    private float mLongitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,6 @@ public class MainActivity extends Activity {
     }
 
     public void startFakeLocations() {
-        isEnabled = true;
         try {
             mLatitude = Float.parseFloat(latitudeEditText.getText().toString());
             mLongitude = Float.parseFloat(longitudeEditText.getText().toString());

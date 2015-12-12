@@ -18,12 +18,7 @@ import java.util.TimerTask;
 
 public class FakeLocationService extends IntentService {
 
-    LocationManager locationManager;
     static Timer mTimer;
-    final int delay = 100 * 5; //0.5 seconds
-    final int lastTime = 1000 * 2; //2 seconds
-    double mLatitude;
-    double mLongitude;
     public static final String TAG = "FakeLocation";
     static LocationListener listener = new LocationListener() {
         public void onLocationChanged(Location location) {
@@ -33,6 +28,13 @@ public class FakeLocationService extends IntentService {
         public void onProviderEnabled(String provider) {}
         public void onProviderDisabled(String provider) {}
     };
+    LocationManager locationManager;
+    //0.5 seconds
+    private final int delay = 100 * 5;
+    //2 seconds
+    private final int lastTime = 1000 * 2;
+    private double mLatitude;
+    private double mLongitude;
 
     public FakeLocationService() {
         super("FakeLocationService");
